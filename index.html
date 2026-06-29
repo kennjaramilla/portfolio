@@ -57,6 +57,7 @@
   .nav-links{display:flex;gap:6px;align-items:center}
   .nav-links a{padding:8px 12px;border-radius:9px;font-size:14px;font-weight:500;color:var(--muted);transition:.15s}
   .nav-links a:hover{color:var(--text);background:var(--tint2)}
+  .nav-links a.active{color:var(--accent-ink)}
   .nav-cta{background:var(--grad);color:#0A0E17 !important;font-weight:700 !important}
   .nav-cta:hover{filter:brightness(1.08)}
   .burger{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--card);
@@ -144,7 +145,15 @@
 
   /* projects */
   .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
-  .card-proj{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;transition:.16s;position:relative;overflow:hidden}
+  .card-proj{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0;display:flex;flex-direction:column;transition:.16s;position:relative;overflow:hidden}
+  .card-proj .shot{position:relative;height:172px;background:#0c1220;overflow:hidden;border-bottom:1px solid var(--line)}
+  [data-theme="light"] .card-proj .shot{background:#e9edf4}
+  .card-proj .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .45s ease}
+  .card-proj:hover .shot img{transform:scale(1.05)}
+  .shot.ph-grad{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(94,234,212,.18),rgba(139,147,255,.2))}
+  .ph-emo{font-size:48px}
+  .shot .tag-ai,.shot .tag-oss{position:absolute;top:11px;right:11px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .card-proj .pbody{padding:18px;display:flex;flex-direction:column;flex:1}
   .card-proj:hover{border-color:var(--line2);transform:translateY(-3px);box-shadow:0 18px 50px rgba(0,0,0,.35)}
   .card-proj .ph{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
   .card-proj .em{font-size:24px}
@@ -277,20 +286,20 @@
 </section>
 
 <section id="ai" class="wrap">
-  <div class="reveal"><div class="eyebrow">How I work</div><h2 class="title">Building <span class="grad-text">with AI</span></h2><p class="lead">I bring AI and LLMs into both <em>what</em> I build and <em>how</em> I build it — as a force-multiplier, with a human in the loop for quality.</p></div>
+  <div class="reveal"><div class="eyebrow">How I work</div><h2 class="title">Building <span class="grad-text">with AI</span></h2><p class="lead">AI isn't a line item on my résumé — it's how I work. I build AI-powered products and weave LLMs through my whole process, always with a human in the loop for quality and correctness.</p></div>
   <div class="ai-wrap reveal">
     <div class="ai-grid">
       <div class="ai-item">
         <h3><span class="ai-ic">🧠</span>AI-powered products</h3>
-        <p>From Samsung's Cognitive Analytics — frontend for an AI-driven 5G network analysis &amp; recommendation platform — to Gastimate, an AI-assisted healthcare info app.</p>
+        <p>I've shipped frontends for AI-driven platforms — like Samsung's <strong>Cognitive Analytics</strong> for automated 5G network analysis — and built <strong>Gastimate</strong>, an AI-assisted public-health app, end to end.</p>
       </div>
       <div class="ai-item">
-        <h3><span class="ai-ic">⚡</span>AI-augmented workflow</h3>
-        <p>I use LLMs (Claude, ChatGPT) to accelerate development — rapid prototyping, research, refactoring, and code review — shipping more without trading away quality.</p>
+        <h3><span class="ai-ic">⚡</span>LLM-augmented delivery</h3>
+        <p>Claude and ChatGPT are part of my daily toolkit — for prototyping, refactoring, research, and code review — so I design and ship <strong>noticeably faster</strong>.</p>
       </div>
       <div class="ai-item">
-        <h3><span class="ai-ic">🎯</span>Pragmatic &amp; responsible</h3>
-        <p>AI is a tool, not autopilot. I verify outputs, own the architecture and UX, and keep accessibility, performance, and correctness firmly human-checked.</p>
+        <h3><span class="ai-ic">🎯</span>Human in the loop</h3>
+        <p>AI accelerates; I stay accountable. I verify every output and own the architecture, accessibility, performance, and UX — so speed never costs quality.</p>
       </div>
     </div>
   </div>
@@ -361,69 +370,96 @@
   <div class="proj-grid">
 
     <div class="card-proj reveal">
-      <div class="ph"><span class="em">💸</span></div>
-      <h3>Exchange Payroll</h3><div class="meta">Strada · Fintech / HR tech</div>
-      <p>Payroll web application in the Strada tools suite — performance optimization, streamlined payroll workflows, and a more refined user experience.</p>
-      <div class="pfoot"><span class="t">Angular</span><span class="t">TypeScript</span><span class="t">Azure</span></div>
+      <div class="shot"><img src="assets/projects/cognitive.jpg" alt="Samsung Cognitive Analytics dashboards" loading="lazy"><span class="tag-ai">AI</span></div>
+      <div class="pbody">
+        <h3>Cognitive Analytics</h3><div class="meta">Samsung · AI for 5G networks</div>
+        <p>Frontend for an analytics platform that establishes the AI-collaboration process for automated 5G network analysis and recommendation — interactive, scalable dashboards.</p>
+        <div class="pfoot"><span class="t">Vue</span><span class="t">React</span><span class="t">TypeScript</span></div>
+      </div>
     </div>
 
     <div class="card-proj reveal">
-      <div class="ph"><span class="em">📊</span><span class="tag-ai">AI</span></div>
-      <h3>Cognitive Analytics</h3><div class="meta">Samsung · AI for 5G networks</div>
-      <p>Frontend for an analytics platform establishing the AI-collaboration process for automated 5G network analysis and recommendation — interactive, scalable dashboards.</p>
-      <div class="pfoot"><span class="t">Vue</span><span class="t">React</span><span class="t">TypeScript</span></div>
+      <div class="shot"><img src="assets/projects/gastimate.jpg" alt="Gastimate hospital cost app" loading="lazy"><span class="tag-ai">AI</span></div>
+      <div class="pbody">
+        <h3>Gastimate</h3><div class="meta">Personal · AI-assisted PWA</div>
+        <p>A free, offline-capable PWA that helps Filipinos estimate hospital procedure costs, PhilHealth coverage, and where to get financial aid — built end-to-end with an AI-augmented workflow.</p>
+        <div class="pfoot"><span class="t">Vanilla JS</span><span class="t">PWA</span><span class="t">Vercel</span></div>
+        <a class="link" href="https://github.com/kennjaramilla/gastimate" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
     </div>
 
     <div class="card-proj reveal">
-      <div class="ph"><span class="em">📡</span></div>
-      <h3>5G Router Interface</h3><div class="meta">Samsung × Verizon · Telecom</div>
-      <p>Built the UI for Verizon's 5G home-router management platform as Senior Frontend Engineer &amp; Code Officer — focused on performance and coding best practices.</p>
-      <div class="pfoot"><span class="t">Vue</span><span class="t">TypeScript</span></div>
+      <div class="shot"><img src="assets/projects/strada.jpg" alt="Strada Exchange Payroll dashboard" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Exchange Payroll</h3><div class="meta">Strada · Fintech / HR tech</div>
+        <p>Payroll web application in the Strada tools suite — performance optimization, streamlined payroll workflows, and a more refined user experience.</p>
+        <div class="pfoot"><span class="t">Angular</span><span class="t">TypeScript</span><span class="t">Azure</span></div>
+      </div>
     </div>
 
     <div class="card-proj reveal">
-      <div class="ph"><span class="em">🏦</span></div>
-      <h3>Client Onboarding &amp; ADAM</h3><div class="meta">Raymond James · Wealth mgmt</div>
-      <p>Client onboarding and agreement-management platforms — new features, production fixes, and the Angular upgrade that improved stability and maintainability.</p>
-      <div class="pfoot"><span class="t">Angular</span><span class="t">TypeScript</span><span class="t">Azure</span></div>
+      <div class="shot"><img src="assets/projects/raymondjames.jpg" alt="Raymond James client dashboard" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Client Onboarding &amp; ADAM</h3><div class="meta">Raymond James · Wealth mgmt</div>
+        <p>Client onboarding and agreement-management platforms — new features, production fixes, and the Angular upgrade that improved stability and maintainability.</p>
+        <div class="pfoot"><span class="t">Angular</span><span class="t">TypeScript</span><span class="t">Azure</span></div>
+      </div>
     </div>
 
     <div class="card-proj reveal">
-      <div class="ph"><span class="em">🧩</span></div>
-      <h3>Infor Process Designer</h3><div class="meta">Infor · Enterprise tooling</div>
-      <p>Frontend lead for Infor's process-design tool, collaborating closely with QA and product to deliver new features and smooth beta releases.</p>
-      <div class="pfoot"><span class="t">Angular</span><span class="t">React</span><span class="t">TypeScript</span></div>
+      <div class="shot"><img src="assets/projects/router.jpg" alt="Verizon 5G router management UI" loading="lazy"></div>
+      <div class="pbody">
+        <h3>5G Router Interface</h3><div class="meta">Samsung × Verizon · Telecom</div>
+        <p>The UI for Verizon's 5G home-router management platform, built as Senior Frontend Engineer &amp; Code Officer — focused on performance and coding best practices.</p>
+        <div class="pfoot"><span class="t">Vue</span><span class="t">TypeScript</span></div>
+      </div>
     </div>
 
     <div class="card-proj reveal">
-      <div class="ph"><span class="em">🎮</span></div>
-      <h3>PlayGalaxy Link</h3><div class="meta">Samsung · Cloud gaming</div>
-      <p>UI consultant for Samsung's cloud-gaming app — building friendly interfaces and improving gameplay accessibility with the product and UX teams.</p>
-      <div class="pfoot"><span class="t">React</span><span class="t">TypeScript</span></div>
+      <div class="shot"><img src="assets/projects/infor.jpg" alt="Infor Process Designer tool" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Infor Process Designer</h3><div class="meta">Infor · Enterprise tooling</div>
+        <p>Frontend lead for Infor's process-design tool, collaborating closely with QA and product to deliver new features and smooth beta releases.</p>
+        <div class="pfoot"><span class="t">Angular</span><span class="t">React</span><span class="t">TypeScript</span></div>
+      </div>
     </div>
 
     <div class="card-proj reveal">
-      <div class="ph"><span class="em">🩺</span><span class="tag-ai">AI</span></div>
-      <h3>Gastimate</h3><div class="meta">Personal · AI-assisted PWA</div>
-      <p>A free, offline-capable PWA that helps Filipinos estimate hospital procedure costs, PhilHealth coverage, and where to get financial aid — built with an AI-augmented workflow.</p>
-      <div class="pfoot"><span class="t">Vanilla JS</span><span class="t">PWA</span><span class="t">Vercel</span></div>
-      <a class="link" href="https://github.com/kennjaramilla/gastimate" target="_blank" rel="noopener">View on GitHub →</a>
+      <div class="shot"><img src="assets/projects/playgalaxy.jpg" alt="Samsung PlayGalaxy Link cloud gaming" loading="lazy"></div>
+      <div class="pbody">
+        <h3>PlayGalaxy Link</h3><div class="meta">Samsung · Cloud gaming</div>
+        <p>UI consultant for Samsung's cloud-gaming app — building friendly interfaces and improving gameplay accessibility with the product and UX teams.</p>
+        <div class="pfoot"><span class="t">React</span><span class="t">TypeScript</span></div>
+      </div>
     </div>
 
     <div class="card-proj reveal">
-      <div class="ph"><span class="em">📖</span><span class="tag-oss">OSS</span></div>
-      <h3>VerseCast</h3><div class="meta">Personal · OBS tool</div>
-      <p>A TypeScript Bible-verse presenter for OBS — KJV and Ang Dating Biblia 1905 across up to four split panes for live broadcasts.</p>
-      <div class="pfoot"><span class="t">TypeScript</span></div>
-      <a class="link" href="https://github.com/kennjaramilla/versecast" target="_blank" rel="noopener">View on GitHub →</a>
+      <div class="shot"><img src="assets/projects/smtickets.jpg" alt="SM Tickets website" loading="lazy"></div>
+      <div class="pbody">
+        <h3>SM Tickets &amp; SM Cinema</h3><div class="meta">MobileGroup · E-commerce</div>
+        <p>High-traffic e-commerce platforms for SM's ticketing and cinema booking — built end to end with a focus on user research and a smooth booking experience.</p>
+        <div class="pfoot"><span class="t">PHP</span><span class="t">JavaScript</span></div>
+      </div>
     </div>
 
     <div class="card-proj reveal">
-      <div class="ph"><span class="em">🔎</span><span class="tag-oss">OSS</span></div>
-      <h3>SEO Analyzer &amp; Crawler</h3><div class="meta">Personal · Python tools</div>
-      <p>A pair of Python tools that crawl a site and analyze on-page SEO performance metrics — handy for quick technical audits.</p>
-      <div class="pfoot"><span class="t">Python</span></div>
-      <a class="link" href="https://github.com/kennjaramilla?tab=repositories" target="_blank" rel="noopener">View on GitHub →</a>
+      <div class="shot ph-grad"><span class="ph-emo">📖</span><span class="tag-oss">OSS</span></div>
+      <div class="pbody">
+        <h3>VerseCast</h3><div class="meta">Personal · OBS tool</div>
+        <p>A TypeScript Bible-verse presenter for OBS — KJV and Ang Dating Biblia 1905 across up to four split panes for live broadcasts.</p>
+        <div class="pfoot"><span class="t">TypeScript</span></div>
+        <a class="link" href="https://github.com/kennjaramilla/versecast" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+    </div>
+
+    <div class="card-proj reveal">
+      <div class="shot ph-grad"><span class="ph-emo">🔎</span><span class="tag-oss">OSS</span></div>
+      <div class="pbody">
+        <h3>SEO Analyzer &amp; Crawler</h3><div class="meta">Personal · Python tools</div>
+        <p>A pair of Python tools that crawl a site and analyze on-page SEO performance metrics — handy for quick technical audits.</p>
+        <div class="pfoot"><span class="t">Python</span></div>
+        <a class="link" href="https://github.com/kennjaramilla?tab=repositories" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
     </div>
 
   </div>
@@ -462,6 +498,11 @@
   // scroll reveal
   const io=new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }),{threshold:.12});
   document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+  // scroll-spy active nav
+  const navMap={};
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(a=>{const id=a.getAttribute("href").slice(1); if(id&&id!=="top") navMap[id]=a;});
+  const spy=new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ Object.values(navMap).forEach(a=>a.classList.remove("active")); const a=navMap[e.target.id]; if(a) a.classList.add("active"); }}),{rootMargin:"-45% 0px -50% 0px"});
+  ["about","ai","skills","experience","projects","contact"].forEach(id=>{const el=document.getElementById(id); if(el) spy.observe(el);});
   // theme toggle (initial theme already set by the head script)
   const themeBtn=document.getElementById("themeBtn");
   const syncIcon=()=>{ themeBtn.textContent = document.documentElement.getAttribute("data-theme")==="light" ? "☀️" : "🌙"; };
