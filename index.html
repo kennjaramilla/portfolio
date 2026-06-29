@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0A0E17">
+<script>(function(){try{var t=localStorage.getItem("theme")||(window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <title>Kenneth Jaramilla — Senior Frontend Developer & Certified Scrum Master</title>
 <meta name="description" content="Kenneth Jaramilla — Senior Frontend Developer & Certified Scrum Master with 10+ years building fast, user-centric web apps in Angular, React, and Vue across fintech, HR tech, and consumer platforms.">
 <meta property="og:title" content="Kenneth Jaramilla — Senior Frontend Developer">
@@ -20,10 +21,20 @@
     --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
     --text:#E9EDF6; --muted:#94A3B8; --dim:#64748B;
     --accent:#5EEAD4; --accent2:#8B93FF; --accent3:#34D399;
+    --accent-ink:#5EEAD4; --tint:var(--tint); --tint2:rgba(255,255,255,.07);
     --grad:linear-gradient(120deg,#5EEAD4,#8B93FF);
     --serif:"Space Grotesk",system-ui,sans-serif; --sans:"Inter",system-ui,-apple-system,sans-serif;
     --max:1080px;
   }
+  [data-theme="light"]{
+    --bg:#F6F8FC; --bg2:#FFFFFF; --card:#FFFFFF; --card2:#EEF2F8;
+    --line:rgba(15,23,42,.10); --line2:rgba(15,23,42,.16);
+    --text:#0E1726; --muted:#46566B; --dim:#8A98AC;
+    --accent-ink:#0C8478; --tint:rgba(15,23,42,.04); --tint2:rgba(15,23,42,.06);
+  }
+  [data-theme="light"] nav{background:rgba(246,248,252,.82)}
+  [data-theme="light"] .grad-text{background:linear-gradient(120deg,#0C8478,#6366F1);-webkit-background-clip:text;background-clip:text;color:transparent}
+  [data-theme="light"] body::before{opacity:.5}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;
@@ -33,7 +44,7 @@
                radial-gradient(50vw 40vh at 0% 0%,rgba(94,234,212,.12),transparent 55%)}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
-  .accent{color:var(--accent)}
+  .accent{color:var(--accent-ink)}
   .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
   /* nav */
@@ -45,14 +56,18 @@
     display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex:none}
   .nav-links{display:flex;gap:6px;align-items:center}
   .nav-links a{padding:8px 12px;border-radius:9px;font-size:14px;font-weight:500;color:var(--muted);transition:.15s}
-  .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+  .nav-links a:hover{color:var(--text);background:var(--tint2)}
   .nav-cta{background:var(--grad);color:#0A0E17 !important;font-weight:700 !important}
   .nav-cta:hover{filter:brightness(1.08)}
   .burger{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--card);
     color:var(--text);font-size:20px;align-items:center;justify-content:center}
+  .nav-right{display:flex;align-items:center;gap:8px}
+  .theme-btn{width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--card);
+    color:var(--text);font-size:17px;display:flex;align-items:center;justify-content:center;flex:none}
+  .theme-btn:hover{border-color:var(--accent)}
 
   section{padding:84px 0;position:relative}
-  .eyebrow{font-family:var(--serif);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .eyebrow{font-family:var(--serif);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent-ink);margin-bottom:14px}
   h2.title{font-family:var(--serif);font-size:clamp(28px,5vw,40px);font-weight:700;line-height:1.1;letter-spacing:-.5px}
   .lead{color:var(--muted);font-size:16px;max-width:640px;margin-top:14px}
 
@@ -66,12 +81,12 @@
   .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:12px;font-weight:600;font-size:14.5px;transition:.16s;border:1px solid transparent}
   .btn.primary{background:var(--grad);color:#0A0E17}
   .btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
-  .btn.ghost{border-color:var(--line2);color:var(--text);background:rgba(255,255,255,.02)}
-  .btn.ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+  .btn.ghost{border-color:var(--line2);color:var(--text);background:var(--tint)}
+  .btn.ghost:hover{border-color:var(--accent-ink);color:var(--accent-ink);transform:translateY(-1px)}
   .icon-row{display:flex;gap:10px;margin-top:22px}
   .icon-row a{width:44px;height:44px;border-radius:11px;border:1px solid var(--line);background:var(--card);
     display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.16s}
-  .icon-row a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+  .icon-row a:hover{color:var(--accent-ink);border-color:var(--accent-ink);transform:translateY(-2px)}
   .icon-row svg{width:20px;height:20px;fill:currentColor}
   .avatar-wrap{justify-self:center;position:relative}
   .avatar{width:min(300px,72vw);aspect-ratio:1;border-radius:24px;object-fit:cover;
@@ -84,13 +99,13 @@
 
   .stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:42px;grid-column:1/-1}
   .stat{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-  .stat .n{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--accent)}
+  .stat .n{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--accent-ink)}
   .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
 
   /* about pillars */
   .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
   .pillar{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
-  .pillar .pi{width:44px;height:44px;border-radius:12px;background:rgba(94,234,212,.1);color:var(--accent);
+  .pillar .pi{width:44px;height:44px;border-radius:12px;background:rgba(94,234,212,.1);color:var(--accent-ink);
     display:flex;align-items:center;justify-content:center;margin-bottom:14px}
   .pillar svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2}
   .pillar h3{font-family:var(--serif);font-size:17px;font-weight:600;margin-bottom:7px}
@@ -99,9 +114,9 @@
   /* skills */
   .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
   .skill-cat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
-  .skill-cat h4{font-family:var(--serif);font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:14px}
+  .skill-cat h4{font-family:var(--serif);font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--accent-ink);margin-bottom:14px}
   .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:9px;padding:7px 12px;font-size:13px;font-weight:500;color:var(--text)}
+  .chip{background:var(--tint);border:1px solid var(--line);border-radius:9px;padding:7px 12px;font-size:13px;font-weight:500;color:var(--text)}
 
   /* experience timeline */
   .timeline{margin-top:34px;position:relative;padding-left:26px}
@@ -111,12 +126,12 @@
   .job::before{content:"";position:absolute;left:-26px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
   .job .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline}
   .job h3{font-family:var(--serif);font-size:18px;font-weight:600}
-  .job .co{color:var(--accent);font-weight:600;font-size:15px}
+  .job .co{color:var(--accent-ink);font-weight:600;font-size:15px}
   .job .when{font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
   .job .where{font-size:13px;color:var(--muted);margin-top:1px}
   .job p{font-size:14.5px;color:var(--muted);margin-top:9px}
   .job .tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
-  .job .tech span{font-size:11.5px;color:var(--dim);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:7px;padding:3px 8px}
+  .job .tech span{font-size:11.5px;color:var(--dim);background:var(--tint);border:1px solid var(--line);border-radius:7px;padding:3px 8px}
 
   /* projects */
   .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
@@ -125,13 +140,13 @@
   .card-proj .ph{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
   .card-proj .em{font-size:24px}
   .tag-ai{font-size:10.5px;font-weight:700;letter-spacing:.5px;color:#0A0E17;background:var(--grad);border-radius:999px;padding:3px 9px}
-  .tag-oss{font-size:10.5px;font-weight:700;letter-spacing:.5px;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:2px 9px}
+  .tag-oss{font-size:10.5px;font-weight:700;letter-spacing:.5px;color:var(--accent-ink);border:1px solid var(--accent);border-radius:999px;padding:2px 9px}
   .card-proj h3{font-family:var(--serif);font-size:17px;font-weight:600;line-height:1.2}
   .card-proj .meta{font-size:12.5px;color:var(--dim);margin-top:3px}
   .card-proj p{font-size:13.5px;color:var(--muted);margin-top:10px;flex:1}
   .card-proj .pfoot{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:14px}
-  .card-proj .pfoot .t{font-size:11px;color:var(--dim);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
-  .card-proj a.link{font-size:12.5px;color:var(--accent);font-weight:600;margin-top:13px;display:inline-flex;align-items:center;gap:5px}
+  .card-proj .pfoot .t{font-size:11px;color:var(--dim);background:var(--tint);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+  .card-proj a.link{font-size:12.5px;color:var(--accent-ink);font-weight:600;margin-top:13px;display:inline-flex;align-items:center;gap:5px}
   .card-proj a.link:hover{gap:8px}
 
   /* AI section */
@@ -139,7 +154,7 @@
     border:1px solid var(--line2);border-radius:22px;padding:34px}
   .ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
   .ai-item h3{font-family:var(--serif);font-size:16px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:9px}
-  .ai-item .ai-ic{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:17px;flex:none}
+  .ai-item .ai-ic{width:34px;height:34px;border-radius:10px;background:var(--tint2);display:flex;align-items:center;justify-content:center;font-size:17px;flex:none}
   .ai-item p{font-size:13.5px;color:var(--muted)}
 
   /* contact */
@@ -150,7 +165,7 @@
 
   footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--dim);font-size:13px}
   footer a{color:var(--muted)}
-  footer a:hover{color:var(--accent)}
+  footer a:hover{color:var(--accent-ink)}
 
   /* reveal */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
@@ -179,15 +194,18 @@
 <nav>
   <div class="nav-in">
     <a href="#top" class="logo"><span class="mark">KJ</span> Kenneth Jaramilla</a>
-    <button class="burger" id="burger" aria-label="Menu">☰</button>
-    <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#ai">AI</a>
-      <a href="#contact">Contact</a>
-      <a href="Kenneth-Jaramilla-Resume.pdf" class="nav-cta" target="_blank" rel="noopener">Résumé</a>
+    <div class="nav-right">
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#ai">AI</a>
+        <a href="#contact">Contact</a>
+        <a href="Kenneth-Jaramilla-Resume.pdf" class="nav-cta" target="_blank" rel="noopener">Résumé</a>
+      </div>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle light/dark theme">🌙</button>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
     </div>
   </div>
 </nav>
@@ -428,6 +446,17 @@
   // scroll reveal
   const io=new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }),{threshold:.12});
   document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+  // theme toggle (initial theme already set by the head script)
+  const themeBtn=document.getElementById("themeBtn");
+  const syncIcon=()=>{ themeBtn.textContent = document.documentElement.getAttribute("data-theme")==="light" ? "☀️" : "🌙"; };
+  syncIcon();
+  themeBtn.addEventListener("click",()=>{
+    const next = document.documentElement.getAttribute("data-theme")==="light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme",next);
+    try{ localStorage.setItem("theme",next); }catch(e){}
+    const mc=document.querySelector('meta[name=theme-color]'); if(mc) mc.setAttribute("content", next==="light" ? "#F6F8FC" : "#0A0E17");
+    syncIcon();
+  });
 </script>
 </body>
 </html>
