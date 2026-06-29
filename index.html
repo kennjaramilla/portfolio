@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0E17">
+<title>Kenneth Jaramilla — Senior Frontend Developer & Certified Scrum Master</title>
+<meta name="description" content="Kenneth Jaramilla — Senior Frontend Developer & Certified Scrum Master with 10+ years building fast, user-centric web apps in Angular, React, and Vue across fintech, HR tech, and consumer platforms.">
+<meta property="og:title" content="Kenneth Jaramilla — Senior Frontend Developer">
+<meta property="og:description" content="10+ years crafting high-impact web experiences. Angular · React · Vue · Certified Scrum Master · building with AI.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/25213935?v=4">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0E17; --bg2:#0E1320; --card:#121A2B; --card2:#0F1626;
+    --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+    --text:#E9EDF6; --muted:#94A3B8; --dim:#64748B;
+    --accent:#5EEAD4; --accent2:#8B93FF; --accent3:#34D399;
+    --grad:linear-gradient(120deg,#5EEAD4,#8B93FF);
+    --serif:"Space Grotesk",system-ui,sans-serif; --sans:"Inter",system-ui,-apple-system,sans-serif;
+    --max:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(60vw 50vh at 80% -10%,rgba(139,147,255,.16),transparent 60%),
+               radial-gradient(50vw 40vh at 0% 0%,rgba(94,234,212,.12),transparent 55%)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+  .accent{color:var(--accent)}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+    background:rgba(10,14,23,.72);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:var(--max);margin:0 auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:17px;letter-spacing:.3px}
+  .logo .mark{width:30px;height:30px;border-radius:9px;background:var(--grad);color:#0A0E17;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex:none}
+  .nav-links{display:flex;gap:6px;align-items:center}
+  .nav-links a{padding:8px 12px;border-radius:9px;font-size:14px;font-weight:500;color:var(--muted);transition:.15s}
+  .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+  .nav-cta{background:var(--grad);color:#0A0E17 !important;font-weight:700 !important}
+  .nav-cta:hover{filter:brightness(1.08)}
+  .burger{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--card);
+    color:var(--text);font-size:20px;align-items:center;justify-content:center}
+
+  section{padding:84px 0;position:relative}
+  .eyebrow{font-family:var(--serif);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h2.title{font-family:var(--serif);font-size:clamp(28px,5vw,40px);font-weight:700;line-height:1.1;letter-spacing:-.5px}
+  .lead{color:var(--muted);font-size:16px;max-width:640px;margin-top:14px}
+
+  /* hero */
+  .hero{padding:72px 0 64px;display:grid;grid-template-columns:1.4fr .9fr;gap:48px;align-items:center}
+  .hero .eyebrow{margin-bottom:18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(40px,7vw,68px);font-weight:700;line-height:1.02;letter-spacing:-1.5px}
+  .hero .role{font-family:var(--serif);font-size:clamp(18px,3vw,24px);font-weight:600;margin-top:10px;color:var(--text)}
+  .hero p.intro{color:var(--muted);font-size:17px;margin-top:20px;max-width:560px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:12px;font-weight:600;font-size:14.5px;transition:.16s;border:1px solid transparent}
+  .btn.primary{background:var(--grad);color:#0A0E17}
+  .btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn.ghost{border-color:var(--line2);color:var(--text);background:rgba(255,255,255,.02)}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+  .icon-row{display:flex;gap:10px;margin-top:22px}
+  .icon-row a{width:44px;height:44px;border-radius:11px;border:1px solid var(--line);background:var(--card);
+    display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.16s}
+  .icon-row a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+  .icon-row svg{width:20px;height:20px;fill:currentColor}
+  .avatar-wrap{justify-self:center;position:relative}
+  .avatar{width:min(300px,72vw);aspect-ratio:1;border-radius:24px;object-fit:cover;
+    border:1px solid var(--line2);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .avatar-wrap::after{content:"";position:absolute;inset:-2px;border-radius:26px;
+    background:var(--grad);opacity:.5;z-index:-1;filter:blur(22px)}
+  .badge{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);white-space:nowrap;
+    background:var(--card);border:1px solid var(--line2);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  .badge .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent3);margin-right:8px;box-shadow:0 0 0 4px rgba(52,211,153,.18)}
+
+  .stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:42px;grid-column:1/-1}
+  .stat{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .stat .n{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--accent)}
+  .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
+
+  /* about pillars */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+  .pillar{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .pillar .pi{width:44px;height:44px;border-radius:12px;background:rgba(94,234,212,.1);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .pillar svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2}
+  .pillar h3{font-family:var(--serif);font-size:17px;font-weight:600;margin-bottom:7px}
+  .pillar p{font-size:14px;color:var(--muted)}
+
+  /* skills */
+  .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
+  .skill-cat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .skill-cat h4{font-family:var(--serif);font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:9px;padding:7px 12px;font-size:13px;font-weight:500;color:var(--text)}
+
+  /* experience timeline */
+  .timeline{margin-top:34px;position:relative;padding-left:26px}
+  .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--accent2),transparent)}
+  .job{position:relative;padding:0 0 30px 22px}
+  .job:last-child{padding-bottom:0}
+  .job::before{content:"";position:absolute;left:-26px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+  .job .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline}
+  .job h3{font-family:var(--serif);font-size:18px;font-weight:600}
+  .job .co{color:var(--accent);font-weight:600;font-size:15px}
+  .job .when{font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .job .where{font-size:13px;color:var(--muted);margin-top:1px}
+  .job p{font-size:14.5px;color:var(--muted);margin-top:9px}
+  .job .tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+  .job .tech span{font-size:11.5px;color:var(--dim);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:7px;padding:3px 8px}
+
+  /* projects */
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+  .card-proj{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;transition:.16s;position:relative;overflow:hidden}
+  .card-proj:hover{border-color:var(--line2);transform:translateY(-3px);box-shadow:0 18px 50px rgba(0,0,0,.35)}
+  .card-proj .ph{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+  .card-proj .em{font-size:24px}
+  .tag-ai{font-size:10.5px;font-weight:700;letter-spacing:.5px;color:#0A0E17;background:var(--grad);border-radius:999px;padding:3px 9px}
+  .tag-oss{font-size:10.5px;font-weight:700;letter-spacing:.5px;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:2px 9px}
+  .card-proj h3{font-family:var(--serif);font-size:17px;font-weight:600;line-height:1.2}
+  .card-proj .meta{font-size:12.5px;color:var(--dim);margin-top:3px}
+  .card-proj p{font-size:13.5px;color:var(--muted);margin-top:10px;flex:1}
+  .card-proj .pfoot{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:14px}
+  .card-proj .pfoot .t{font-size:11px;color:var(--dim);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+  .card-proj a.link{font-size:12.5px;color:var(--accent);font-weight:600;margin-top:13px;display:inline-flex;align-items:center;gap:5px}
+  .card-proj a.link:hover{gap:8px}
+
+  /* AI section */
+  .ai-wrap{margin-top:32px;background:linear-gradient(160deg,rgba(139,147,255,.08),rgba(94,234,212,.05));
+    border:1px solid var(--line2);border-radius:22px;padding:34px}
+  .ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+  .ai-item h3{font-family:var(--serif);font-size:16px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:9px}
+  .ai-item .ai-ic{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:17px;flex:none}
+  .ai-item p{font-size:13.5px;color:var(--muted)}
+
+  /* contact */
+  .contact-card{margin-top:30px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:40px;text-align:center}
+  .contact-card h2{font-family:var(--serif);font-size:clamp(26px,4.5vw,38px);font-weight:700;letter-spacing:-.5px}
+  .contact-card p{color:var(--muted);margin:14px auto 0;max-width:480px}
+  .contact-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--dim);font-size:13px}
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--accent)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:860px){
+    .hero{grid-template-columns:1fr;gap:34px;text-align:center;padding-top:48px}
+    .hero .avatar-wrap{order:-1}
+    .cta-row,.icon-row{justify-content:center}
+    .hero p.intro{margin-left:auto;margin-right:auto}
+    .pillars,.proj-grid,.ai-grid{grid-template-columns:1fr}
+    .skill-grid{grid-template-columns:1fr}
+    .nav-links{position:fixed;inset:62px 12px auto 12px;flex-direction:column;align-items:stretch;gap:4px;
+      background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:10px;box-shadow:0 20px 50px rgba(0,0,0,.5);
+      display:none}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 14px}
+    .burger{display:flex}
+  }
+  @media(max-width:600px){ section{padding:60px 0} .ai-wrap{padding:24px} .contact-card{padding:28px} }
+  @media(prefers-reduced-motion:reduce){ .reveal{transition:none;opacity:1;transform:none} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="#top" class="logo"><span class="mark">KJ</span> Kenneth Jaramilla</a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#ai">AI</a>
+      <a href="#contact">Contact</a>
+      <a href="Kenneth-Jaramilla-Resume.pdf" class="nav-cta" target="_blank" rel="noopener">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<a id="top"></a>
+<header class="wrap hero">
+  <div>
+    <div class="eyebrow">Senior Frontend Developer · Certified Scrum Master</div>
+    <h1>Kenneth<br><span class="grad-text">Jaramilla</span></h1>
+    <div class="role">I build fast, user-centric web apps — and lead the teams that ship them.</div>
+    <p class="intro">Seasoned frontend engineer with <strong>10+ years</strong> delivering high-impact applications across fintech, HR tech, and consumer platforms — in <strong>Angular, React &amp; Vue</strong> — and a Certified Scrum Master who leads cross-functional teams.</p>
+    <div class="cta-row">
+      <a href="#projects" class="btn primary">View my work</a>
+      <a href="Kenneth-Jaramilla-Resume.pdf" target="_blank" rel="noopener" class="btn ghost">Download résumé ↓</a>
+    </div>
+    <div class="icon-row">
+      <a href="https://github.com/kennjaramilla" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+      <a href="https://www.linkedin.com/in/kenneth-jaramilla/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zM4.943 13.394V6.169H2.542v7.225zM3.743 5.182c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248s-1.359.54-1.359 1.248c0 .694.521 1.248 1.327 1.248zM6.27 13.394h2.401V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169H6.27c.03.678 0 7.225 0 7.225z"/></svg></a>
+      <a href="mailto:kennethjaramilla@outlook.com" aria-label="Email"><svg viewBox="0 0 16 16"><path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2zm2-1a1 1 0 00-1 1v.217l7 4.2 7-4.2V4a1 1 0 00-1-1zm13 2.383l-4.708 2.825L15 11.105zm-.034 6.876l-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 002 13h12a1 1 0 00.966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg></a>
+    </div>
+  </div>
+  <div class="avatar-wrap reveal">
+    <img class="avatar" src="assets/avatar.jpg" alt="Kenneth Jaramilla" width="300" height="300">
+    <span class="badge"><span class="dot"></span>Open to opportunities</span>
+  </div>
+  <div class="stats reveal">
+    <div class="stat"><div class="n">10+</div><div class="l">Years of experience</div></div>
+    <div class="stat"><div class="n">15+</div><div class="l">Products shipped</div></div>
+    <div class="stat"><div class="n">Angular · React · Vue</div><div class="l">Core frameworks</div></div>
+    <div class="stat"><div class="n">CSM</div><div class="l">Certified Scrum Master</div></div>
+  </div>
+</header>
+
+<section id="about" class="wrap">
+  <div class="reveal">
+    <div class="eyebrow">About</div>
+    <h2 class="title">A frontend engineer who ships — and a leader who unblocks.</h2>
+    <p class="lead">Dynamic Senior Frontend Developer with over a decade across fintech, HR tech, and consumer platforms. I pair deep expertise in Angular and React with proven Agile leadership as a Certified Scrum Master — driving real gains in performance, user experience, and team velocity.</p>
+  </div>
+  <div class="pillars">
+    <div class="pillar reveal">
+      <div class="pi"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3M9 12l2 2 4-4"/></svg></div>
+      <h3>Frontend Engineering</h3>
+      <p>Performant, accessible, maintainable UIs in Angular, React &amp; Vue — TypeScript-first, with a sharp eye for UX and clean architecture.</p>
+    </div>
+    <div class="pillar reveal">
+      <div class="pi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zm14 10v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <h3>Agile &amp; Scrum Leadership</h3>
+      <p>Certified Scrum Master and backup Product Owner — facilitating ceremonies, refining backlogs, and keeping cross-functional teams aligned and shipping.</p>
+    </div>
+    <div class="pillar reveal">
+      <div class="pi"><svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h3>UX &amp; User Research</h3>
+      <p>From research to refined interfaces — I optimize real workflows, mentor developers, and build products people actually find easy to use.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="wrap">
+  <div class="reveal"><div class="eyebrow">Toolkit</div><h2 class="title">Skills &amp; technologies</h2></div>
+  <div class="skill-grid">
+    <div class="skill-cat reveal"><h4>Frameworks</h4><div class="chips">
+      <span class="chip">Angular (7–15+)</span><span class="chip">React (15–17+)</span><span class="chip">Vue</span><span class="chip">AngularJS</span><span class="chip">RxJS</span>
+    </div></div>
+    <div class="skill-cat reveal"><h4>Languages</h4><div class="chips">
+      <span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">HTML5</span><span class="chip">SCSS / CSS</span><span class="chip">PHP</span>
+    </div></div>
+    <div class="skill-cat reveal"><h4>Tooling &amp; Cloud</h4><div class="chips">
+      <span class="chip">Azure</span><span class="chip">Git / GitLab / GitHub</span><span class="chip">Jira</span><span class="chip">Redmine</span><span class="chip">Cypress</span>
+    </div></div>
+    <div class="skill-cat reveal"><h4>Practices</h4><div class="chips">
+      <span class="chip">Agile / Scrum</span><span class="chip">Scrum Master (CSM)</span><span class="chip">Product Ownership</span><span class="chip">User Research</span><span class="chip">Performance Optimization</span><span class="chip">Mentoring</span><span class="chip">Building with AI</span>
+    </div></div>
+  </div>
+</section>
+
+<section id="experience" class="wrap">
+  <div class="reveal"><div class="eyebrow">Career</div><h2 class="title">Experience</h2></div>
+  <div class="timeline">
+    <div class="job reveal">
+      <div class="top"><h3><span class="co">Strada</span> — Product Engineering Specialist</h3><span class="when">Oct 2023 — Present</span></div>
+      <div class="where">Quezon City</div>
+      <p>Enhance and ship features for the Exchange Payroll web app in the Strada tools suite — optimizing performance, elevating UX, and streamlining payroll. Also serve as backup Product Owner and facilitate daily Scrum.</p>
+      <div class="tech"><span>Angular 15+</span><span>React 17+</span><span>TypeScript</span><span>SCSS</span><span>Azure</span></div>
+    </div>
+    <div class="job reveal">
+      <div class="top"><h3><span class="co">Seven Seven Global (Raymond James)</span> — Angular Developer</h3><span class="when">Sep 2022 — Oct 2023</span></div>
+      <div class="where">Pasig</div>
+      <p>Built features for the Client Onboarding (COB) and Agreement Management (ADAM) utilities, led the Angular upgrade, and reduced technical debt to improve code quality and performance.</p>
+      <div class="tech"><span>Angular 14+</span><span>TypeScript</span><span>SCSS</span><span>Azure</span></div>
+    </div>
+    <div class="job reveal">
+      <div class="top"><h3><span class="co">Infor PSSC</span> — Senior Software Engineer</h3><span class="when">Mar 2021 — Sep 2022</span></div>
+      <div class="where">Taguig</div>
+      <p>Led frontend development for Infor's Process Designer tool — new features, release testing, and beta support — while serving as Scrum Master facilitating stand-ups, planning, and retrospectives.</p>
+      <div class="tech"><span>Angular 12</span><span>React 17+</span><span>TypeScript</span><span>SCSS</span><span>GitLab</span><span>Jira</span></div>
+    </div>
+    <div class="job reveal">
+      <div class="top"><h3><span class="co">Samsung Electronics</span> — Engineer</h3><span class="when">Sep 2018 — Mar 2021</span></div>
+      <div class="where">Taguig</div>
+      <p>Led design, development, and delivery of frontend components across Cognitive Analytics, the Verizon 5G Router interface, and PlayGalaxy Link. Acted as sub-team lead and facilitated Scrum ceremonies.</p>
+      <div class="tech"><span>Vue</span><span>Angular 7+</span><span>AngularJS</span><span>React 16+</span><span>TypeScript</span><span>SCSS</span></div>
+    </div>
+    <div class="job reveal">
+      <div class="top"><h3><span class="co">Solutions Exchange</span> — Technical Analyst I</h3><span class="when">Jan 2017 — Aug 2018</span></div>
+      <div class="where">Makati</div>
+      <p>Designed, built, and shipped reusable React components for BPI's digital banking systems, and mentored junior developers during ramp-up and live demos to accelerate team proficiency.</p>
+      <div class="tech"><span>React 15+</span><span>SCSS</span><span>GitLab</span><span>Redmine</span></div>
+    </div>
+    <div class="job reveal">
+      <div class="top"><h3><span class="co">MobileGroup</span> — Software Engineer</h3><span class="when">Jul 2014 — Jan 2017</span></div>
+      <div class="where">Makati</div>
+      <p>Full-stack development for SM Tickets and SM Cinema e-commerce platforms, leading user research and design initiatives.</p>
+      <div class="tech"><span>PHP</span><span>JavaScript</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="wrap">
+  <div class="reveal"><div class="eyebrow">Selected work</div><h2 class="title">Projects</h2><p class="lead">Enterprise products across fintech, telecom, and consumer tech — plus open-source apps I build on the side.</p></div>
+  <div class="proj-grid">
+
+    <div class="card-proj reveal">
+      <div class="ph"><span class="em">💸</span></div>
+      <h3>Exchange Payroll</h3><div class="meta">Strada · Fintech / HR tech</div>
+      <p>Payroll web application in the Strada tools suite — performance optimization, streamlined payroll workflows, and a more refined user experience.</p>
+      <div class="pfoot"><span class="t">Angular</span><span class="t">TypeScript</span><span class="t">Azure</span></div>
+    </div>
+
+    <div class="card-proj reveal">
+      <div class="ph"><span class="em">📊</span><span class="tag-ai">AI</span></div>
+      <h3>Cognitive Analytics</h3><div class="meta">Samsung · AI for 5G networks</div>
+      <p>Frontend for an analytics platform establishing the AI-collaboration process for automated 5G network analysis and recommendation — interactive, scalable dashboards.</p>
+      <div class="pfoot"><span class="t">Vue</span><span class="t">React</span><span class="t">TypeScript</span></div>
+    </div>
+
+    <div class="card-proj reveal">
+      <div class="ph"><span class="em">📡</span></div>
+      <h3>5G Router Interface</h3><div class="meta">Samsung × Verizon · Telecom</div>
+      <p>Built the UI for Verizon's 5G home-router management platform as Senior Frontend Engineer &amp; Code Officer — focused on performance and coding best practices.</p>
+      <div class="pfoot"><span class="t">Vue</span><span class="t">TypeScript</span></div>
+    </div>
+
+    <div class="card-proj reveal">
+      <div class="ph"><span class="em">🏦</span></div>
+      <h3>Client Onboarding &amp; ADAM</h3><div class="meta">Raymond James · Wealth mgmt</div>
+      <p>Client onboarding and agreement-management platforms — new features, production fixes, and the Angular upgrade that improved stability and maintainability.</p>
+      <div class="pfoot"><span class="t">Angular</span><span class="t">TypeScript</span><span class="t">Azure</span></div>
+    </div>
+
+    <div class="card-proj reveal">
+      <div class="ph"><span class="em">🧩</span></div>
+      <h3>Infor Process Designer</h3><div class="meta">Infor · Enterprise tooling</div>
+      <p>Frontend lead for Infor's process-design tool, collaborating closely with QA and product to deliver new features and smooth beta releases.</p>
+      <div class="pfoot"><span class="t">Angular</span><span class="t">React</span><span class="t">TypeScript</span></div>
+    </div>
+
+    <div class="card-proj reveal">
+      <div class="ph"><span class="em">🎮</span></div>
+      <h3>PlayGalaxy Link</h3><div class="meta">Samsung · Cloud gaming</div>
+      <p>UI consultant for Samsung's cloud-gaming app — building friendly interfaces and improving gameplay accessibility with the product and UX teams.</p>
+      <div class="pfoot"><span class="t">React</span><span class="t">TypeScript</span></div>
+    </div>
+
+    <div class="card-proj reveal">
+      <div class="ph"><span class="em">🩺</span><span class="tag-ai">AI</span></div>
+      <h3>Gastimate</h3><div class="meta">Personal · AI-assisted PWA</div>
+      <p>A free, offline-capable PWA that helps Filipinos estimate hospital procedure costs, PhilHealth coverage, and where to get financial aid — built with an AI-augmented workflow.</p>
+      <div class="pfoot"><span class="t">Vanilla JS</span><span class="t">PWA</span><span class="t">Vercel</span></div>
+      <a class="link" href="https://github.com/kennjaramilla/gastimate" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+
+    <div class="card-proj reveal">
+      <div class="ph"><span class="em">📖</span><span class="tag-oss">OSS</span></div>
+      <h3>VerseCast</h3><div class="meta">Personal · OBS tool</div>
+      <p>A TypeScript Bible-verse presenter for OBS — KJV and Ang Dating Biblia 1905 across up to four split panes for live broadcasts.</p>
+      <div class="pfoot"><span class="t">TypeScript</span></div>
+      <a class="link" href="https://github.com/kennjaramilla/versecast" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+
+    <div class="card-proj reveal">
+      <div class="ph"><span class="em">🔎</span><span class="tag-oss">OSS</span></div>
+      <h3>SEO Analyzer &amp; Crawler</h3><div class="meta">Personal · Python tools</div>
+      <p>A pair of Python tools that crawl a site and analyze on-page SEO performance metrics — handy for quick technical audits.</p>
+      <div class="pfoot"><span class="t">Python</span></div>
+      <a class="link" href="https://github.com/kennjaramilla?tab=repositories" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="ai" class="wrap">
+  <div class="reveal"><div class="eyebrow">How I work</div><h2 class="title">Building <span class="grad-text">with AI</span></h2><p class="lead">I bring AI and LLMs into both <em>what</em> I build and <em>how</em> I build it — as a force-multiplier, with a human in the loop for quality.</p></div>
+  <div class="ai-wrap reveal">
+    <div class="ai-grid">
+      <div class="ai-item">
+        <h3><span class="ai-ic">🧠</span>AI-powered products</h3>
+        <p>From Samsung's Cognitive Analytics — frontend for an AI-driven 5G network analysis &amp; recommendation platform — to Gastimate, an AI-assisted healthcare info app.</p>
+      </div>
+      <div class="ai-item">
+        <h3><span class="ai-ic">⚡</span>AI-augmented workflow</h3>
+        <p>I use LLMs (Claude, ChatGPT) to accelerate development — rapid prototyping, research, refactoring, and code review — shipping more without trading away quality.</p>
+      </div>
+      <div class="ai-item">
+        <h3><span class="ai-ic">🎯</span>Pragmatic &amp; responsible</h3>
+        <p>AI is a tool, not autopilot. I verify outputs, own the architecture and UX, and keep accessibility, performance, and correctness firmly human-checked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="wrap">
+  <div class="contact-card reveal">
+    <div class="eyebrow" style="justify-content:center">Get in touch</div>
+    <h2>Let's build something great.</h2>
+    <p>Open to senior frontend roles, Scrum leadership, and interesting collaborations. Based in San Juan, Metro Manila — working with teams worldwide.</p>
+    <div class="contact-row">
+      <a href="mailto:kennethjaramilla@outlook.com" class="btn primary">Email me</a>
+      <a href="https://www.linkedin.com/in/kenneth-jaramilla/" target="_blank" rel="noopener" class="btn ghost">LinkedIn</a>
+      <a href="https://github.com/kennjaramilla" target="_blank" rel="noopener" class="btn ghost">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> Kenneth Jaramilla · Senior Frontend Developer &amp; Certified Scrum Master<br>
+    <span style="color:var(--dim)">Designed &amp; built from scratch in vanilla HTML, CSS &amp; JS — with a little help from AI.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  // mobile nav
+  const burger=document.getElementById("burger"), navLinks=document.getElementById("navLinks");
+  burger.addEventListener("click",()=>navLinks.classList.toggle("open"));
+  navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>navLinks.classList.remove("open")));
+  // scroll reveal
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }),{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
