@@ -1,6 +1,6 @@
 # Kenneth Jaramilla — Portfolio
 
-Personal portfolio for **Kenneth Jaramilla**, Senior Frontend Developer & Certified Scrum Master.
+Personal portfolio for **Kenneth Jaramilla**, Senior Full Stack Developer & Certified Scrum Master.
 
 Single-page, responsive, dark-themed site built from scratch in **vanilla HTML, CSS & JS** —
 no framework, no build step. Fast, accessible, and deployable as a static site.
